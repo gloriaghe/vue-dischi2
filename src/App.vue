@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <header></header>
-    <ContainerCardDisc/>
+    <header>
+      <font-awesome-icon icon="fa-brands fa-spotify" />
+    </header>
+    <ContainerCardDisc />
   </div>
 </template>
 
@@ -23,12 +25,12 @@ export default {
   color: white;
   height: 100vh;
 
-    header{
-      background-color: #2e3a46;
-      height: 55px;
-    }
+  header {
+    background-color: #2e3a46;
+    height: 55px;
+  }
 
-    
+
 }
 
 * {

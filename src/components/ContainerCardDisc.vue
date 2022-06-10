@@ -58,6 +58,7 @@ export default {
   flex-wrap: wrap;
   width: 65%;
   margin: 60px auto;
+  height: 80%;
 
 }
 </style>
