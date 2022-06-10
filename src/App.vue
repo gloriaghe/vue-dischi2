@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <font-awesome-icon icon="fa-brands fa-spotify" />
+      <font-awesome-icon id="iconaSpotify" icon="fa-brands fa-spotify" />
     </header>
     <ContainerCardDisc />
   </div>
@@ -28,6 +28,14 @@ export default {
   header {
     background-color: #2e3a46;
     height: 55px;
+    display: flex;
+    align-items: center;
+
+    #iconaSpotify{
+      color: #1ed55e;
+      font-size: 40px;
+      margin-left: 10px;
+    }
   }
 
 
