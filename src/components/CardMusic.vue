@@ -22,6 +22,13 @@ export default {
 <style scoped lang="scss">
     .card{
         background-color: #2e3a46;
+        flex-basis: 18%;
+        margin-right: 20px;
+        text-align: center;
+        
+        img{
+            max-width: 100%;
+        }
 
         h2{
             color: white;
@@ -29,6 +36,7 @@ export default {
 
         span{
             color: #7d6f62;
+            display: block;
         }
     }
 </style>

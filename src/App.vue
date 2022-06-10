@@ -19,9 +19,9 @@ export default {
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  background-color: #1e2d3b;
+  color: white;
   
-  color: #2c3e50;
-
 
     header{
       background-color: #2e3a46;
