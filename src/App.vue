@@ -27,6 +27,8 @@ export default {
       background-color: #2e3a46;
       height: 55px;
     }
+
+    
 }
 
 * {
