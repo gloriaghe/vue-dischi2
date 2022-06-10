@@ -22,21 +22,31 @@ export default {
 <style scoped lang="scss">
     .card{
         background-color: #2e3a46;
-        flex-basis: 18%;
-        margin-right: 20px;
+        flex-basis: 16%;
+        margin-top: 20px;
+        margin-right: 2%;
+        padding-bottom: 20px;
         text-align: center;
-        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         img{
-            max-width: 100%;
+            max-width: 80%;
+            margin: 20px 0;
         }
 
         h2{
             color: white;
+            text-transform: uppercase;
+            font-size: 23px;
+            margin-bottom: 20px;
         }
 
         span{
-            color: #7d6f62;
+            color: #807f7e;
             display: block;
+            font-size: 19px;
         }
     }
 </style>

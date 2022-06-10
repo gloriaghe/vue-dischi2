@@ -21,7 +21,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   background-color: #1e2d3b;
   color: white;
-  
+  height: 100vh;
 
     header{
       background-color: #2e3a46;

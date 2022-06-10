@@ -50,11 +50,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   #discContainer{
-    
-    height: calc(100vh - 55px);
     display: flex;
     flex-wrap: wrap;
-    width: 70%;
-    margin: 0 auto;
+    width: 65%;
+    margin: 60px auto;
+
   }
 </style>
