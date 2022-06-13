@@ -4,10 +4,8 @@
       <select name="Genere" v-model="inputGenre" @change="$emit('search', inputGenre)">
         <option disabled value="">Please select genre:</option>
         <option value="ALL">All</option>
-        <option value="ROCK">ROCK</option>
-        <option value="POP">POP</option>
-        <option value="JAZZ">JAZZ</option>
-        <option value="METAL">METAL</option>
+        <option v-for="(genreSingle, i) in genre" :key="i" :value="genreSingle.genre">{{genreSingle.genre}}</option>
+
       </select>
    
 </template>
@@ -17,6 +15,9 @@
 
 export default {
   name: "SearchMusic",
+   props:{
+    genre: Array
+  },
   data() {
     return {
       inputGenre: "",

@@ -11,6 +11,7 @@
 
 export default {
   name: "SearchArtist",
+ 
   data() {
     return {
       inputArtist: "",

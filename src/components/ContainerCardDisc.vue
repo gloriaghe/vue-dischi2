@@ -3,7 +3,7 @@
 
   <div v-else>
     <div id="menuSearch">
-      <SearchMusic @search="searchGenere" />
+      <SearchMusic @search="searchGenere" :genre="musicCard"/>
       <SearchArtist @search="searchArtist" />
     </div>
 
