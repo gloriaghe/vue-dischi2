@@ -1,7 +1,7 @@
 <template>
   
     
-      <select name="Genere" v-model="inputGenre" @input.prevent="$emit('search', inputGenre)">
+      <select name="Genere" v-model="inputGenre" @change="$emit('search', inputGenre)">
         <option disabled value="">Please select genre:</option>
         <option value="ALL">All</option>
         <option value="ROCK">ROCK</option>
