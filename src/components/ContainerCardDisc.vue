@@ -34,7 +34,7 @@ export default {
     return {
       apiUrl: "https://flynn.boolean.careers/exercises/api/array/music",
       musicCardTotal: {},
-      musicCard: {},
+      musicCard:[],
       loadingCard: true,
       userGenre: "",
       userArtist: ""
