@@ -2,11 +2,15 @@
   <div v-if="loadingCard" id="loadCard">Loading....</div>
 
   <div v-else>
-    <SearchMusic @search="searchGenere"/>
-      
+    <div id="menuSearch">
+      <SearchMusic @search="searchGenere" />
+      <SearchArtist @search="searchArtist" />
+    </div>
+
     <section id="discContainer">
 
       <CardMusic v-for="(element, i) in filtredmusicCard" :key="i" :singleCard="element" />
+
     </section>
   </div>
 </template>
@@ -15,13 +19,16 @@
 import axios from "axios";
 import CardMusic from './CardMusic.vue';
 import SearchMusic from './SearchMusic.vue';
+import SearchArtist from './SearchArtist.vue';
+
 
 
 export default {
   name: "ContainerCardDisc",
   components: {
     CardMusic,
-    SearchMusic
+    SearchMusic,
+    SearchArtist
   },
   data() {
     return {
@@ -29,7 +36,8 @@ export default {
       musicCardTotal: {},
       musicCard: {},
       loadingCard: true,
-      userGenre:""
+      userGenre: "",
+      userArtist: ""
     }
   },
   created() {
@@ -45,28 +53,41 @@ export default {
           console.log(this.musicCard)
           this.loadingCard = false;
         })
+          //segnala errori api
         .catch((error) => {
           console.log("Errore", error);
         })
     },
-
-    searchGenere(genreuser){
+    //genere
+    searchGenere(genreuser) {
       this.userGenre = genreuser;
       console.log(genreuser)
+    },
+    //artista
+    searchArtist(artistUser) {
+      this.userArtist = artistUser;
     }
   },
   computed: {
-    filtredmusicCard(){
-      if(this.userGenre === ""){
-        return this.musicCard;
-      } else{
-        return this.musicCard.filter(item =>{
-          return item.genre.toLowerCase().includes(this.userGenre.toLowerCase());
+    filtredmusicCard() {
+      //filtro per genere
+      if (this.userArtist === "") {
+        if (this.userGenre === "" || this.userGenre === "ALL") {
+          return this.musicCard;
+        } else {
+          return this.musicCard.filter(item => {
+            return item.genre.toLowerCase().includes(this.userGenre.toLowerCase());
+          })
+        }
+        //filtro per artista
+      } else {
+        return this.musicCard.filter(item => {
+          return item.author.toLowerCase().includes(this.userArtist.toLowerCase());
         })
       }
 
+    },
 
-    }
   }
 }
 </script>
@@ -79,11 +100,17 @@ export default {
   margin-top: 20px;
 }
 
+#menuSearch {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 #discContainer {
   display: flex;
   flex-wrap: wrap;
   width: 65%;
-  margin: 60px auto;
+  margin: 30px auto;
   height: 80%;
 
 }

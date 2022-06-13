@@ -1,14 +1,14 @@
 <template>
   
-    <div id="menuGenere">
-      <select name="Genere" v-model="inputGenre" @input="$emit('search', inputGenre)">
+    
+      <select name="Genere" v-model="inputGenre" @input.prevent="$emit('search', inputGenre)">
         <option disabled value="">Please select genre:</option>
+        <option value="ALL">All</option>
         <option value="ROCK">ROCK</option>
         <option value="POP">POP</option>
         <option value="JAZZ">JAZZ</option>
         <option value="METAL">METAL</option>
       </select>
-    </div>
    
 </template>
 
@@ -30,12 +30,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
-
-#menuGenere{
-  display: flex;
-  justify-content: center;
-  margin: 10px;
-}
 
 
 </style>
